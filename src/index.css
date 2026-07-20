@@ -32,6 +32,15 @@
   }
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
 /* Techie bot widget positioning — extra bottom clearance on mobile since in-app
    browser toolbars (Instagram, etc.) overlay the viewport bottom and are NOT
    reported by env(safe-area-inset-bottom), which only covers OS-level insets. */
