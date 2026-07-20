@@ -136,7 +136,7 @@ export default function Navbar({
             title="Stars"
           >
             <Star className="w-4.5 h-4.5 fill-purple-500/10" />
-            <span className="text-[10px] font-mono text-slate-500">8.4k</span>
+            <span className="hidden sm:inline text-[10px] font-mono text-slate-500">8.4k</span>
           </div>
           <button
             onClick={onTerminalClick}
@@ -152,23 +152,25 @@ export default function Navbar({
           <button
             type="button"
             onClick={onToggleDashboard}
-            className={`relative inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-bold rounded-lg text-white border transition-all duration-300 shadow-sm cursor-pointer ${
+            className={`relative inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 text-xs font-mono font-bold rounded-lg text-white border transition-all duration-300 shadow-sm cursor-pointer shrink-0 ${
               isDashboardOpen
                 ? themeStyles.btnActive
                 : `bg-white/5 border-white/10 hover:bg-white/10 ${themeStyles.hoverBorder} ${themeStyles.hoverGlow}`
             }`}
+            title="Command Center"
           >
             <Cpu className="w-3.5 h-3.5 animate-pulse" />
-            COMMAND CENTER
+            <span className="hidden sm:inline">COMMAND CENTER</span>
           </button>
         ) : (
           <button
             type="button"
             onClick={onOpenAuthModal}
-            className={`relative inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-bold rounded-lg text-white bg-gradient-to-r ${themeStyles.btnGrad} hover:from-cyan-400 hover:to-purple-500 shadow-sm transition-all duration-300 group cursor-pointer`}
+            className={`relative inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 text-xs font-mono font-bold rounded-lg text-white bg-gradient-to-r ${themeStyles.btnGrad} hover:from-cyan-400 hover:to-purple-500 shadow-sm transition-all duration-300 group cursor-pointer shrink-0`}
+            title="Secure Access"
           >
             <User className="w-3.5 h-3.5" />
-            SECURE ACCESS
+            <span className="hidden sm:inline">SECURE ACCESS</span>
           </button>
         )}
       </div>
