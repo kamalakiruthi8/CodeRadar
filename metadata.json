@@ -1,0 +1,6 @@
+{
+  "name": "CodeRadar",
+  "description": "Premium, futuristic GitHub analytics dashboard with 3D contribution visualization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
