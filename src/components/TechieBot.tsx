@@ -392,14 +392,7 @@ export default function TechieBot({ theme }: TechieBotProps) {
   ];
 
   return (
-    <div
-      id="techie-bot-container"
-      className="fixed z-50 font-sans select-none"
-      style={{
-        bottom: "calc(env(safe-area-inset-bottom, 0px) + 1rem)",
-        right: "calc(env(safe-area-inset-right, 0px) + 1rem)",
-      }}
-    >
+    <div id="techie-bot-container" className="fixed z-50 font-sans select-none">
       <AnimatePresence>
         {isOpen ? (
           /* Expandable Chat Widget */

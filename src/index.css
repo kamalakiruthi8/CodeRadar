@@ -32,7 +32,21 @@
   }
 }
 
-/* Hide scrollbar but keep functionality */
+/* Techie bot widget positioning — extra bottom clearance on mobile since in-app
+   browser toolbars (Instagram, etc.) overlay the viewport bottom and are NOT
+   reported by env(safe-area-inset-bottom), which only covers OS-level insets. */
+#techie-bot-container {
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 1.5rem);
+  right: calc(env(safe-area-inset-right, 0px) + 1.5rem);
+}
+
+@media (max-width: 640px) {
+  #techie-bot-container {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 5rem);
+    right: calc(env(safe-area-inset-right, 0px) + 0.75rem);
+  }
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
