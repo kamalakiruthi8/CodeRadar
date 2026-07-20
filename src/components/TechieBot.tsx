@@ -392,7 +392,14 @@ export default function TechieBot({ theme }: TechieBotProps) {
   ];
 
   return (
-    <div id="techie-bot-container" className="fixed bottom-6 right-6 z-50 font-sans select-none">
+    <div
+      id="techie-bot-container"
+      className="fixed z-50 font-sans select-none"
+      style={{
+        bottom: "calc(env(safe-area-inset-bottom, 0px) + 1rem)",
+        right: "calc(env(safe-area-inset-right, 0px) + 1rem)",
+      }}
+    >
       <AnimatePresence>
         {isOpen ? (
           /* Expandable Chat Widget */
@@ -401,7 +408,7 @@ export default function TechieBot({ theme }: TechieBotProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.85, y: 30 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className={`w-[350px] sm:w-[380px] h-[480px] rounded-2xl bg-slate-950/95 border ${themeClasses.border} backdrop-blur-xl flex flex-col overflow-hidden shadow-2xl ${themeClasses.auraGlow}`}
+            className={`w-[calc(100vw-2rem)] sm:w-[380px] max-w-[380px] h-[480px] max-h-[70vh] rounded-2xl bg-slate-950/95 border ${themeClasses.border} backdrop-blur-xl flex flex-col overflow-hidden shadow-2xl ${themeClasses.auraGlow}`}
           >
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 bg-slate-900/80 border-b border-white/5 select-none shrink-0">
@@ -597,7 +604,7 @@ export default function TechieBot({ theme }: TechieBotProps) {
                   exit={{ opacity: 0, scale: 0.85, y: 15 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   onClick={() => setIsOpen(true)}
-                  className="absolute bottom-[90px] right-2 max-w-[260px] cursor-pointer z-50 pointer-events-auto filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+                  className="absolute bottom-[90px] right-2 max-w-[260px] w-[calc(100vw-4rem)] cursor-pointer z-50 pointer-events-auto filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
                 >
                   <div className={`relative px-4 py-3 rounded-xl bg-slate-950/95 border ${themeClasses.border} backdrop-blur-md text-left`}>
                     {/* Glowing Accent Corner line */}
@@ -657,10 +664,8 @@ export default function TechieBot({ theme }: TechieBotProps) {
                   // Open chat immediately with no spin animation on click or touch
                   setIsOpen(true);
                 }}
-                className="relative cursor-pointer select-none transition-all duration-300"
+                className="relative cursor-pointer select-none transition-all duration-300 w-14 h-[70px] sm:w-[72px] sm:h-[90px]"
                 style={{ 
-                  width: "72px", 
-                  height: "90px",
                   filter: `drop-shadow(0 0 12px ${theme === 'pink' ? 'rgba(236,72,153,0.45)' : theme === 'green' ? 'rgba(16,185,129,0.45)' : 'rgba(34,211,238,0.45)'})`
                 }}
               >
